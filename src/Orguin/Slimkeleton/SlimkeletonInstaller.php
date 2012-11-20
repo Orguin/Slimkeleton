@@ -19,7 +19,7 @@ class SlimkeletonInstaller extends LibraryInstaller {
      */
     public function install(InstalledRepositoryInterface $repo, PackageInterface $package) {
 
-        parent::install();
+        parent::install( $repo , $package );
 
         @rmdir('src');
 
