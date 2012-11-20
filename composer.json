@@ -8,7 +8,7 @@
     "dist": {
         "type": "vcs",
         "url": "https://github.com/Orguin/Slimkeleton"
-    }
+    },
     "authors": [
         {
             "name": "Guilherme Fiuza",
