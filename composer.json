@@ -1,9 +1,9 @@
 {
     "name": "orguin/slimkeleton",
     "description": "Slim framework skeleton",
+    "keywords": ["kanban"],
     "homepage": "https://github.com/Orguin/Slimkeleton",
-    "version": "0.0.1",
-    "type": "composer-installer",
+    "version": "0.0.1-dev",
     "license": "MIT",
     "dist": {
         "type": "vcs",
@@ -20,10 +20,13 @@
     "support": {
         "email": "guilherme@orguin.com.br"
     },
-    "autoload": {
-        "psr-0": {"Orguin\\Slimkeleton\\":"src/"}
-    },
-    "extra": {
-        "class": "Orguin\\Slimkeleton\\SlimkeletonInstaller"
+    "require": {
+        "php": ">=5.3.0",
+        "ext-mongo": "*",
+        "ext-pdo": "*",
+        "slim/slim": "dev-master",
+        "monolog/monolog": "1.3.x-dev",
+        "caseyamcl/MongoRecord": "dev-master",
+        "php-activerecord/php-activerecord": "dev-master"
     }
 }
