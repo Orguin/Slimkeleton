@@ -21,7 +21,7 @@
         "email": "guilherme@orguin.com.br"
     },
     "autoload": {
-        "psr-0": {"": "src/"}
+        "files": ["src/Installer.php"]
     },
     "extra": {
         "class": "Orguin\\Slimkeleton\\Installer"
