@@ -5,7 +5,7 @@ namespace Orguin\Slimkeleton;
 use Composer\Package\PackageInterface;
 use Composer\Installer\LibraryInstaller;
 
-class Installer extends LibraryInstaller {
+class SlimkeletonInstaller extends LibraryInstaller {
 
     /**
      * {@inheritDoc}

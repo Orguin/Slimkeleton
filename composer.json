@@ -24,6 +24,6 @@
         "psr-0": {"Orguin\\Slimkeleton\\":"src/"}
     },
     "extra": {
-        "class": "Orguin\\Slimkeleton\\Installer"
+        "class": "Orguin\\Slimkeleton\\SlimkeletonInstaller"
     }
 }
