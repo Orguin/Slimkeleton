@@ -26,4 +26,8 @@ class SlimkeletonInstaller extends LibraryInstaller {
 
     }
 
+    public function supports($packageType) {
+        return 'composer-installer' === $packageType;
+    }
+
 }
