@@ -4,6 +4,7 @@ namespace Orguin\Slimkeleton;
 
 use Composer\Package\PackageInterface;
 use Composer\Installer\LibraryInstaller;
+use Composer\Repository\InstalledRepositoryInterface;
 
 class SlimkeletonInstaller extends LibraryInstaller {
 
