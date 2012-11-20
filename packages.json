@@ -1,8 +1,14 @@
 {
     "packages": {
         "orguin/slimkeleton": {
-            "dev-master": { @composer.json },
-            "0.0.1-dev": { @composer.json }
+            "dev-master": {
+                "name": "orguin/slimkeleton",
+                "version": "0.0.1-dev",
+                "dist": {
+                    "type": "vcs",
+                    "url": "https://github.com/Orguin/Slimkeleton"
+                }
+            }
         }
     }
 }
