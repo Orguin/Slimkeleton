@@ -1,5 +1,7 @@
 <?php
 
+namespace Orguin\Slimkeleton;
+
 use Composer\Package\PackageInterface;
 use Composer\Installer\LibraryInstaller;
 

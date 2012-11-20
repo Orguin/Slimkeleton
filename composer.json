@@ -22,5 +22,8 @@
     },
     "autoload": {
         "files": ["src/Installer.php"]
+    },
+    "extra": {
+        "class": "Orguin\\Slimkeleton\\Installer"
     }
 }
