@@ -1,0 +1,8 @@
+{
+    "packages": {
+        "orguin/slimkeleton": {
+            "dev-master": { @composer.json },
+            "0.0.1-dev": { @composer.json }
+        }
+    }
+}
