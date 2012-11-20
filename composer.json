@@ -1,0 +1,26 @@
+{
+    "name": "orguin/slimkeleton",
+    "description": "Slim framework skeleton",
+    "homepage": "https://github.com/Orguin/Slimkeleton",
+    "version": "0.0.1",
+    "type": "composer-installer",
+    "license": "MIT",
+    "dist": {
+        "type": "vcs",
+        "url": "https://github.com/Orguin/Slimkeleton"
+    }
+    "authors": [
+        {
+            "name": "Guilherme Fiuza",
+            "email": "guilherme@orguin.com.br",
+            "homepage": "http://blog.orguin.com.br",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "email": "guilherme@orguin.com.br"
+    },
+    "autoload": {
+        "files": ["src/Installer.php"]
+    }
+}
