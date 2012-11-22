@@ -6,7 +6,8 @@
                 "version": "0.0.1-dev",
                 "source": {
                     "type": "vcs",
-                    "url": "https://github.com/Orguin/Slimkeleton"
+                    "url": "https://github.com/Orguin/Slimkeleton",
+                    "reference": "tree/master"
                 }
             }
         }
