@@ -3,7 +3,7 @@
 /**
  * DEFINE PATH
  */
-define( 'ROOT_PATH',         realpath( dirname(__FILE__) . '/../../../' ) );
+define( 'ROOT_PATH',         realpath( dirname(__FILE__) . '/../../' ) );
 
 define( 'APPLICATION_PATH',  realpath( ROOT_PATH         . '/application/' ) );
 define( 'PUBLIC_PATH',       realpath( ROOT_PATH         . '/public/' ) );
