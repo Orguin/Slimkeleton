@@ -1,7 +1,7 @@
 {
     "name": "orguin/slimkeleton",
     "description": "Slim framework skeleton",
-    "keywords": ["kanban"],
+    "keywords": ["slim","framework","skeleton"],
     "homepage": "https://github.com/Orguin/Slimkeleton",
     "version": "0.0.1-dev",
     "license": "MIT",
