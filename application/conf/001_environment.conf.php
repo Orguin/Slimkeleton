@@ -13,7 +13,7 @@ switch ( ENVIRONMENT ) {
         ini_set('display_errors',true);
         break;
 
-    case 'testing':
+    case 'test':
     case 'production':
     default:
         error_reporting(0);

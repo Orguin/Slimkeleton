@@ -8,7 +8,7 @@ switch (ENVIRONMENT) {
         define('FACEBOOK_APP_ID','');
         define('FACEBOOK_APP_SECRET','');
         break;
-    case 'testing':
+    case 'test':
         define('FACEBOOK_APP_ID','');
         define('FACEBOOK_APP_SECRET','');
         break;
