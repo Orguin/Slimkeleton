@@ -4,7 +4,7 @@
             "dev-master": {
                 "name": "orguin/slimkeleton",
                 "version": "0.0.1-dev",
-                "dist": {
+                "source": {
                     "type": "vcs",
                     "url": "https://github.com/Orguin/Slimkeleton"
                 }
