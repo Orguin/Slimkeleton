@@ -48,7 +48,7 @@ if ( 'mongodb' === DB_DRIVER ) {
 
         $dbcfg->set_connections(
             array(
-                'production' => 'sqlite:' . DB_FILE
+                ENVIRONMENT => 'sqlite:' . DB_FILE
             )
         );
 
@@ -56,14 +56,14 @@ if ( 'mongodb' === DB_DRIVER ) {
 
         $dbcfg->set_connections(
             array(
-                'production' => DB_DRIVER . '://' . DB_USER . ':' . DB_PASS . '@' . DB_HOST . '/' . DB_NAME
+                ENVIRONMENT => DB_DRIVER . '://' . DB_USER . ':' . DB_PASS . '@' . DB_HOST . '/' . DB_NAME
             )
         );
 
     }
 
     ActiveRecord\Config::initialize(function($dbcfg){
-        $dbcfg->set_default_connection( 'production' );
+        $dbcfg->set_default_connection( ENVIRONMENT );
     });
 
 }
