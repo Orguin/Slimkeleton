@@ -1,10 +1,31 @@
 <?php
 
-
 /**
  * DEFINE ENVIRONMENT
  */
-define('ENVIRONMENT','development');
+
+$environments = array(
+
+    'development' => array('http://localhost(.*)', '(.*).dev', '(.*).local' ),
+    'production' => array('(.*).com', '(.*).com.br'),
+
+);
+
+
+$host = get_host();
+
+foreach ( $environments as $environment => $patterns ) {
+    foreach ( $patterns as $pattern ) {
+        if ( preg_match( '#'.$pattern.'\z#' , $host ) or $pattern == $host ) {
+            define( 'ENVIRONMENT', $environment );
+            break 2;
+        }
+    }
+}
+
+
+if ( !defined('ENVIRONMENT') ) define( 'ENVIRONMENT' , 'production' );
+
 
 switch ( ENVIRONMENT ) {
 

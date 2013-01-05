@@ -10,6 +10,7 @@ $app = new \Slim\Slim(array(
 $app->configureMode('production', function () use ($app) {
     $app->config(array(
         'log.enable' => true,
+        'log.level' => \Slim\Log::WARN,
         'debug' => false
     ));
 });
@@ -18,6 +19,7 @@ $app->configureMode('production', function () use ($app) {
 $app->configureMode('development', function () use ($app) {
     $app->config(array(
         'log.enable' => false,
+        'log.level' => \Slim\Log::DEBUG,
         'debug' => true
     ));
 });
@@ -30,7 +32,7 @@ $app->response()->header('Access-Control-Allow-Credentials', 'true');
 $app->response()->header('Access-Control-Max-Age', 86400);
 
 // all methods return json content
-$app->response()->header('Content-Type', 'text/plain');
+$app->response()->header('Content-Type', mime('txt') );
 
 // replace 404
 $app->notFound(function () use ($app) {
