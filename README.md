@@ -1,13 +1,23 @@
-Slimkeleton
-------------
+# Slimkeleton
 
 Slim framework Skeleton
 
 
-Create Project
----------------
+## Provides via Composer
 
-1. Install composer: http://getcomposer.org
+* Slim framework
+* Slim-Extras
+* Swiftmailer for advanced PHP mailer
+* Monolog for PHP loggin
+* MongoRecord for mongodb active record
+* PHP ActiveRecord
+* Wrench simple WebSocket
+* PHP I18N for internationalization
+
+
+## Create Project
+
+1. Install [Composer](http://getcomposer.org)
 
 2. In the command line/shell, run:
 
