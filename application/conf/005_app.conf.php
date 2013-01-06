@@ -7,7 +7,7 @@ if ( ! path('root') ) {
 $app = new \Slim\Slim(
     array(
         'mode' => env(),
-        'templates.path' => path('view'),
+        'templates.path' => path('app.view'),
         'view' => new \Slimkeleton\MustacheSlim()
     )
 );

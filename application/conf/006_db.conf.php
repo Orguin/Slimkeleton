@@ -6,48 +6,54 @@ if ( ! path('root') ) {
 
 switch ( env() ) {
     case 'development':
-        define('DB_DRIVER', 'mongodb'); // mongodb, mysql, pgsql, oci, sqlite
-        define('DB_FILE', ''); // only sqlite
-        define('DB_NAME', 'your_db');
-        define('DB_HOST', 'localhost');
-        define('DB_USER', 'root');
-        define('DB_PASS', 'root');
+        $GLOBALS['SK']['DB']['DRIVER'] = 'mongodb'; // mongodb, mysql, pgsql, oci, sqlite
+        $GLOBALS['SK']['DB']['FILE'] = ''; // only sqlite
+        $GLOBALS['SK']['DB']['NAME'] = 'your_db';
+        $GLOBALS['SK']['DB']['HOST'] = 'localhost';
+        $GLOBALS['SK']['DB']['USER'] = 'root';
+        $GLOBALS['SK']['DB']['PASS'] = 'root';
         break;
     case 'test':
-        define('DB_DRIVER', 'mongodb'); // mongodb, mysql, pgsql, oci, sqlite
-        define('DB_FILE', ''); // only sqlite
-        define('DB_NAME', '');
-        define('DB_HOST', '');
-        define('DB_USER', '');
-        define('DB_PASS', '');
+        $GLOBALS['SK']['DB']['DRIVER'] = 'mongodb'; // mongodb, mysql, pgsql, oci, sqlite
+        $GLOBALS['SK']['DB']['FILE'] = ''; // only sqlite
+        $GLOBALS['SK']['DB']['NAME'] = '';
+        $GLOBALS['SK']['DB']['HOST'] = '';
+        $GLOBALS['SK']['DB']['USER'] = '';
+        $GLOBALS['SK']['DB']['PASS'] = '';
         break;
     case 'production':
     default:
-        define('DB_DRIVER', 'mongodb'); // mongodb, mysql, pgsql, oci, sqlite
-        define('DB_FILE', ''); // only sqlite
-        define('DB_NAME', '');
-        define('DB_HOST', '');
-        define('DB_USER', '');
-        define('DB_PASS', '');
+        $GLOBALS['SK']['DB']['DRIVER'] = 'mongodb'; // mongodb, mysql, pgsql, oci, sqlite
+        $GLOBALS['SK']['DB']['FILE'] = ''; // only sqlite
+        $GLOBALS['SK']['DB']['NAME'] = '';
+        $GLOBALS['SK']['DB']['HOST'] = '';
+        $GLOBALS['SK']['DB']['USER'] = '';
+        $GLOBALS['SK']['DB']['PASS'] = '';
         break;
 }
 
-if ( 'mongodb' === DB_DRIVER ) {
+if ( 'mongodb' === $GLOBALS['SK']['DB']['DRIVER'] ) {
 
-    BaseMongoRecord::$connection = new Mongo('mongodb://' . DB_USER . ':' . DB_PASS . '@' . DB_HOST . '/' . DB_NAME);
-    BaseMongoRecord::$database = DB_NAME;
+    BaseMongoRecord::$connection = new Mongo(
+        'mongodb://'
+        . $GLOBALS['SK']['DB']['USER'] . ':'
+        . $GLOBALS['SK']['DB']['PASS'] . '@'
+        . $GLOBALS['SK']['DB']['HOST'] . '/'
+        . $GLOBALS['SK']['DB']['NAME']
+    );
+    BaseMongoRecord::$database = $GLOBALS['SK']['DB']['NAME'];
 
 } else {
 
     $dbcfg = ActiveRecord\Config::instance();
 
-    $dbcfg->set_model_directory(path('model'));
+    $dbcfg->set_model_directory(path('app.model'));
 
-    if ( 'sqlite' === DB_DRIVER ) {
+    if ( 'sqlite' === $GLOBALS['SK']['DB']['DRIVER'] ) {
 
         $dbcfg->set_connections(
             array(
-                env() => 'sqlite:' . DB_FILE
+                env() => 'sqlite:' . path('storage.database', true) . $GLOBALS['SK']['DB']['FILE']
             )
         );
 
@@ -55,7 +61,13 @@ if ( 'mongodb' === DB_DRIVER ) {
 
         $dbcfg->set_connections(
             array(
-                env() => DB_DRIVER . '://' . DB_USER . ':' . DB_PASS . '@' . DB_HOST . '/' . DB_NAME
+                env() => (
+                    $GLOBALS['SK']['DB']['DRIVER'] . '://'
+                    . $GLOBALS['SK']['DB']['USER'] . ':'
+                    . $GLOBALS['SK']['DB']['PASS'] . '@'
+                    . $GLOBALS['SK']['DB']['HOST'] . '/'
+                    . $GLOBALS['SK']['DB']['NAME']
+                )
             )
         );
 

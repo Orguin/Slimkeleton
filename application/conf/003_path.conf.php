@@ -1,24 +1,35 @@
 <?php
 
-/**
- * DEFINE PATH
- */
-$GLOBALS['SK']['PATH']['ROOT'] = realpath(dirname(__FILE__) . '/../../');
 
-$GLOBALS['SK']['PATH']['APPLICATION'] = realpath(path('root') . '/application/');
-$GLOBALS['SK']['PATH']['PUBLIC'] = realpath(path('root') . '/public/');
-$GLOBALS['SK']['PATH']['UPLOAD'] = realpath(path('root') . '/upload/');
-$GLOBALS['SK']['PATH']['TMP'] = realpath(path('root') . '/tmp/');
-$GLOBALS['SK']['PATH']['LOG'] = realpath(path('root') . '/log/');
-$GLOBALS['SK']['PATH']['VENDOR'] = realpath(path('root') . '/vendor/');
+$path['app'] = 'application';
 
-$GLOBALS['SK']['PATH']['MODEL'] = realpath(path('application') . '/model/');
-$GLOBALS['SK']['PATH']['ROUTE'] = realpath(path('application') . '/route/');
-$GLOBALS['SK']['PATH']['MIDDLEWARE'] = realpath(path('application') . '/middleware/');
-$GLOBALS['SK']['PATH']['VIEW'] = realpath(path('application') . '/view/');
-$GLOBALS['SK']['PATH']['CONFIG'] = realpath(path('application') . '/conf/');
-$GLOBALS['SK']['PATH']['LANG'] = realpath(path('application') . '/lang/');
+$path['public'] = 'public';
 
-$GLOBALS['SK']['PATH']['UPLOAD_IMAGE'] = realpath(path('upload') . '/image/');
+$path['log'] = 'log';
 
-$GLOBALS['SK']['PATH']['TMP_LANG'] = realpath(path('tmp') . '/lang/');
+$path['storage'] = 'storage';
+
+$path['tmp'] = 'tmp';
+
+$path['upload'] = 'upload';
+
+$path['vendor'] = 'vendor';
+
+
+
+// **************************
+// END USER CONFIGURATION
+// **************************
+
+
+
+$path['root'] = realpath(dirname(__FILE__) . '/../../');
+
+chdir($path['root']);
+
+foreach ($paths as $name => $path) {
+    $name = strtoupper($name);
+    if ( ! isset($GLOBALS['SK']['PATH'][$name]) ) {
+        $GLOBALS['SK']['PATH'][$name] = realpath($path) . DIRECTORY_SEPARATOR;
+    }
+}

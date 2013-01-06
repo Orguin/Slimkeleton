@@ -1,13 +1,38 @@
 <?php
 
-function path ($path)
+function path ($path, $create = false)
 {
 
-    $path = strtoupper(trim($path));
+    $paths = explode('.', $path);
+
+    $parent = strtoupper(trim(shift($paths)));
 
     if ( isset( $GLOBALS['SK']['PATH'][$path] ) and ! empty( $GLOBALS['SK']['PATH'][$path] ) ) {
-        return $GLOBALS['SK']['PATH'][$path];
+
+        $parent = $GLOBALS['SK']['PATH'][$path];
+
+        if ( !empty($paths) ) {
+            foreach ($paths as $child) {
+
+                if ( ! file_exists($parent . $child) ) {
+
+                    if ( ! $create ) {
+                        continue;
+                    }
+
+                    mkdir($parent . $child, 0755);
+
+                }
+
+                $parent = realpath($parent. $child) . DIRECTORY_SEPARATOR;
+
+            }
+        }
+
+        return $parent;
+
     }
+
 
     return false;
 
@@ -65,15 +90,72 @@ function env ()
 
 }
 
+function conf ($conf, $default = null)
+{
+
+    if ( ! $conf ) {
+        return null;
+    }
+
+    $confs = explode('.', $conf);
+
+    $parent = strtoupper(trim(shift($confs)));
+
+    if ( isset( $GLOBALS['SK'][$parent] ) ) {
+
+        $parent = $GLOBALS['SK'][$parent];
+
+        if ( !empty($confs) ) {
+            foreach ($confs as $child) {
+
+                if ( ! isset($parent[$child]) ) {
+                    return conf($default);
+                }
+
+                $parent = $parent[$child];
+
+            }
+        }
+
+        return $parent;
+
+    }
+
+    return $conf;
+
+}
+
+function facebook ($conf = 'facebook')
+{
+
+    return conf('facebook.' . $conf, 'facebook.facebook');
+
+}
+
+function mime ($type)
+{
+
+    return conf('mimes.' . $type, 'mimes.txt');
+
+}
+
 function log ($name)
 {
 
-    $name = strtoupper(trim($name));
+    return conf('log.' . $name);
 
-    if ( isset($GLOBALS['SK']['LOG'][$name]) ) {
-        return $GLOBALS['SK']['LOG'][$name];
+}
+
+function debug ($msg, $die = false)
+{
+
+    echo '<hr>';
+    echo '<pre>';
+    print_r($msg);
+    echo '</pre>';
+
+    if ( $die ) {
+        die();
     }
-
-    return null;
 
 }
