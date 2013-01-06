@@ -3,7 +3,6 @@
     "description": "Slim framework skeleton",
     "keywords": ["slim","framework","skeleton"],
     "homepage": "https://github.com/Orguin/Slimkeleton",
-    "version": "0.0.1-dev",
     "license": "MIT",
     "authors": [
         {

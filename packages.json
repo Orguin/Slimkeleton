@@ -3,7 +3,6 @@
         "orguin/slimkeleton": {
             "dev-master": {
                 "name": "orguin/slimkeleton",
-                "version": "0.0.1-dev",
                 "source": {
                     "type": "git",
                     "url": "https://github.com/Orguin/Slimkeleton",
