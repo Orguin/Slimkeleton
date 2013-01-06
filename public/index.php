@@ -3,13 +3,13 @@
 /*
  * Configuration
  */
-require realpath( dirname( __FILE__ ) . '/../application/conf/load.conf.php' );
+require realpath(dirname(__FILE__) . '/../application/conf/load.conf.php');
 
 /**
  * Require all middleware
  */
 $filename='';
-foreach ( glob( MIDDLEWARE_PATH . "/*.php") as $filename ) {
+foreach (glob(path('middleware') . "/*.php") as $filename) {
     require $filename;
 }
 
@@ -17,7 +17,7 @@ foreach ( glob( MIDDLEWARE_PATH . "/*.php") as $filename ) {
  * Require all routes
  */
 $filename='';
-foreach ( glob( ROUTE_PATH . "/*.php") as $filename ) {
+foreach (glob(path('route') . "/*.php") as $filename) {
     require $filename;
 }
 

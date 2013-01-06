@@ -1,7 +1,11 @@
-<?php if ( ! defined( 'ROOT_PATH' ) ) die('Restrict');
-
+<?php
+if ( ! path('root') ) {
+    die('Restrict');
+}
 
 /**
- * Require autoload vendor libs
+ * Require vendor libs
  */
-require VENDOR_PATH . '/autoload.php';
+require path('vendor') . '/autoload.php';
+
+require path('vendor') . '/Slimkeleton/Mustache.php';

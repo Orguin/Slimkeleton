@@ -1,4 +1,8 @@
-<?php if ( ! defined( 'ROOT_PATH' ) ) die('Restrict');
+<?php
+if ( ! path('root') ) {
+    die('Restrict');
+}
 
-$i18n = new i18n( LANG_PATH . '/lang_{LANGUAGE}.yml', TMP_LANG_PATH, 'pt' );
+
+$i18n = new i18n(path('lang') . '/lang_{LANGUAGE}.yml', path('tmp_lang'), 'pt');
 $i18n->init();

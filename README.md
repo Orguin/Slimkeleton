@@ -6,13 +6,15 @@ Slim framework Skeleton
 ## Provides via Composer
 
 * Slim framework
-* Slim-Extras
+* Slim extras
+* Mustache Template Engine
 * Swiftmailer for advanced PHP mailer
 * Monolog for PHP loggin
 * MongoRecord for mongodb active record
 * PHP ActiveRecord
 * Wrench simple WebSocket
 * PHP I18N for internationalization
+* Facebook SDK
 
 
 ## Create Project

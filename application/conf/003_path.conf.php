@@ -3,21 +3,22 @@
 /**
  * DEFINE PATH
  */
-define( 'ROOT_PATH',         realpath( dirname(__FILE__) . '/../../' ) );
+$GLOBALS['SK']['PATH']['ROOT'] = realpath(dirname(__FILE__) . '/../../');
 
-define( 'APPLICATION_PATH',  realpath( ROOT_PATH         . '/application/' ) );
-define( 'PUBLIC_PATH',       realpath( ROOT_PATH         . '/public/' ) );
-define( 'UPLOAD_PATH',       realpath( ROOT_PATH         . '/upload/' ) );
-define( 'TMP_PATH',          realpath( ROOT_PATH         . '/tmp/' ) );
-define( 'VENDOR_PATH',       realpath( ROOT_PATH         . '/vendor/' ) );
+$GLOBALS['SK']['PATH']['APPLICATION'] = realpath(path('root') . '/application/');
+$GLOBALS['SK']['PATH']['PUBLIC'] = realpath(path('root') . '/public/');
+$GLOBALS['SK']['PATH']['UPLOAD'] = realpath(path('root') . '/upload/');
+$GLOBALS['SK']['PATH']['TMP'] = realpath(path('root') . '/tmp/');
+$GLOBALS['SK']['PATH']['LOG'] = realpath(path('root') . '/log/');
+$GLOBALS['SK']['PATH']['VENDOR'] = realpath(path('root') . '/vendor/');
 
-define( 'MODEL_PATH',        realpath( APPLICATION_PATH  . '/model/' ) );
-define( 'ROUTE_PATH',        realpath( APPLICATION_PATH  . '/route/' ) );
-define( 'MIDDLEWARE_PATH',   realpath( APPLICATION_PATH  . '/middleware/' ) );
-define( 'VIEW_PATH',         realpath( APPLICATION_PATH  . '/view/' ) );
-define( 'CONFIG_PATH',       realpath( APPLICATION_PATH  . '/conf/' ) );
-define( 'LANG_PATH',         realpath( APPLICATION_PATH  . '/lang/' ) );
+$GLOBALS['SK']['PATH']['MODEL'] = realpath(path('application') . '/model/');
+$GLOBALS['SK']['PATH']['ROUTE'] = realpath(path('application') . '/route/');
+$GLOBALS['SK']['PATH']['MIDDLEWARE'] = realpath(path('application') . '/middleware/');
+$GLOBALS['SK']['PATH']['VIEW'] = realpath(path('application') . '/view/');
+$GLOBALS['SK']['PATH']['CONFIG'] = realpath(path('application') . '/conf/');
+$GLOBALS['SK']['PATH']['LANG'] = realpath(path('application') . '/lang/');
 
-define( 'UPLOAD_IMAGE_PATH', realpath( UPLOAD_PATH       . '/image/' ) );
+$GLOBALS['SK']['PATH']['UPLOAD_IMAGE'] = realpath(path('upload') . '/image/');
 
-define( 'TMP_LANG_PATH',     realpath( TMP_PATH          . '/lang/' ) );
+$GLOBALS['SK']['PATH']['TMP_LANG'] = realpath(path('tmp') . '/lang/');

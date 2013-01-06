@@ -1,5 +1,7 @@
-<?php if ( ! defined( 'ROOT_PATH' ) ) die('Restrict');
-
+<?php
+if ( ! path('root') ) {
+    die('Restrict');
+}
 /**
  * Route /
  *
@@ -8,8 +10,12 @@
  * @name Index
  * @via get
  */
-$app->get('/', $authenticated('user'), function () use ($app,$facebook) {
+$app->get(
+    '/',
+    $authenticated('user'),
+    function () use ($app, $facebook) {
 
-    // user is logged
+        // user is logged
 
-})->name('Index');
+    }
+)->name('Index');
