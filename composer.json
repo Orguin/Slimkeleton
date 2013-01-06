@@ -28,7 +28,7 @@
         "ext-pdo": "*",
         "slim/slim": "dev-master",
         "slim/extras": "dev-master",
-        "mustache/mustache": "dev-master"
+        "mustache/mustache": "dev-master",
         "monolog/monolog": "1.3.*@dev",
         "php-activerecord/php-activerecord": "dev-master",
         "caseyamcl/MongoRecord": "dev-master",
