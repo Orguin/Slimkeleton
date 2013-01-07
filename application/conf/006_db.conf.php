@@ -6,16 +6,16 @@ if ( ! path('root') ) {
 
 switch ( env() ) {
     case 'development':
-        $GLOBALS['SK']['DB']['DRIVER'] = 'mongodb'; // mongodb, mysql, pgsql, oci, sqlite
-        $GLOBALS['SK']['DB']['FILE'] = ''; // only sqlite
-        $GLOBALS['SK']['DB']['NAME'] = 'your_db';
-        $GLOBALS['SK']['DB']['HOST'] = 'localhost';
-        $GLOBALS['SK']['DB']['USER'] = 'root';
-        $GLOBALS['SK']['DB']['PASS'] = 'root';
+        $GLOBALS['SK']['DB']['DRIVER'] = 'sqlite'; // mongodb, mysql, pgsql, oci, sqlite
+        $GLOBALS['SK']['DB']['FILE'] = 'test.db'; // only sqlite
+        $GLOBALS['SK']['DB']['NAME'] = '';
+        $GLOBALS['SK']['DB']['HOST'] = '';
+        $GLOBALS['SK']['DB']['USER'] = '';
+        $GLOBALS['SK']['DB']['PASS'] = '';
         break;
     case 'test':
-        $GLOBALS['SK']['DB']['DRIVER'] = 'mongodb'; // mongodb, mysql, pgsql, oci, sqlite
-        $GLOBALS['SK']['DB']['FILE'] = ''; // only sqlite
+        $GLOBALS['SK']['DB']['DRIVER'] = 'sqlite'; // mongodb, mysql, pgsql, oci, sqlite
+        $GLOBALS['SK']['DB']['FILE'] = 'test.db'; // only sqlite
         $GLOBALS['SK']['DB']['NAME'] = '';
         $GLOBALS['SK']['DB']['HOST'] = '';
         $GLOBALS['SK']['DB']['USER'] = '';
@@ -23,8 +23,8 @@ switch ( env() ) {
         break;
     case 'production':
     default:
-        $GLOBALS['SK']['DB']['DRIVER'] = 'mongodb'; // mongodb, mysql, pgsql, oci, sqlite
-        $GLOBALS['SK']['DB']['FILE'] = ''; // only sqlite
+        $GLOBALS['SK']['DB']['DRIVER'] = 'sqlite'; // mongodb, mysql, pgsql, oci, sqlite
+        $GLOBALS['SK']['DB']['FILE'] = 'test.db'; // only sqlite
         $GLOBALS['SK']['DB']['NAME'] = '';
         $GLOBALS['SK']['DB']['HOST'] = '';
         $GLOBALS['SK']['DB']['USER'] = '';

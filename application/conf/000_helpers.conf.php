@@ -5,11 +5,11 @@ function path ($path, $create = false)
 
     $paths = explode('.', $path);
 
-    $parent = strtoupper(trim(shift($paths)));
+    $parent = strtoupper(trim(array_shift($paths)));
 
-    if ( isset( $GLOBALS['SK']['PATH'][$path] ) and ! empty( $GLOBALS['SK']['PATH'][$path] ) ) {
+    if ( isset( $GLOBALS['SK']['PATH'][$parent] ) and ! empty( $GLOBALS['SK']['PATH'][$parent] ) ) {
 
-        $parent = $GLOBALS['SK']['PATH'][$path];
+        $parent = $GLOBALS['SK']['PATH'][$parent];
 
         if ( !empty($paths) ) {
             foreach ($paths as $child) {
@@ -99,7 +99,7 @@ function conf ($conf, $default = null)
 
     $confs = explode('.', $conf);
 
-    $parent = strtoupper(trim(shift($confs)));
+    $parent = strtoupper(trim(array_shift($confs)));
 
     if ( isset( $GLOBALS['SK'][$parent] ) ) {
 
@@ -139,7 +139,7 @@ function mime ($type)
 
 }
 
-function log ($name)
+function logger ($name)
 {
 
     return conf('log.' . $name);

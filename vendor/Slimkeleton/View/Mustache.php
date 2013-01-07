@@ -1,6 +1,6 @@
 <?php
 
-namespace Slimkeleton;
+namespace Slimkeleton\View;
 
 class Mustache extends \Slim\View
 {

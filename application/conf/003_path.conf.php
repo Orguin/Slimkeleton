@@ -1,19 +1,19 @@
 <?php
 
 
-$path['app'] = 'application';
+$paths['app'] = 'application';
 
-$path['public'] = 'public';
+$paths['public'] = 'public';
 
-$path['log'] = 'log';
+$paths['log'] = 'log';
 
-$path['storage'] = 'storage';
+$paths['storage'] = 'storage';
 
-$path['tmp'] = 'tmp';
+$paths['tmp'] = 'tmp';
 
-$path['upload'] = 'upload';
+$paths['upload'] = 'upload';
 
-$path['vendor'] = 'vendor';
+$paths['vendor'] = 'vendor';
 
 
 
@@ -23,9 +23,9 @@ $path['vendor'] = 'vendor';
 
 
 
-$path['root'] = realpath(dirname(__FILE__) . '/../../');
+$paths['root'] = realpath(dirname(__FILE__) . '/../../');
 
-chdir($path['root']);
+chdir($paths['root']);
 
 foreach ($paths as $name => $path) {
     $name = strtoupper($name);

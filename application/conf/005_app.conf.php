@@ -8,7 +8,7 @@ $app = new \Slim\Slim(
     array(
         'mode' => env(),
         'templates.path' => path('app.view'),
-        'view' => new \Slimkeleton\MustacheSlim()
+        'view' => new \Slimkeleton\View\Mustache()
     )
 );
 

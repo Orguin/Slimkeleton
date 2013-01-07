@@ -8,4 +8,4 @@ if ( ! path('root') ) {
  */
 require path('vendor') . '/autoload.php';
 
-require path('vendor') . '/Slimkeleton/Mustache.php';
+require path('vendor') . '/Slimkeleton/View/Mustache.php';
